@@ -387,7 +387,7 @@ function tmwpi_register_private_taxonomy()
     );
 
     // escondendo a tag padrão do WP caso o Post seja selecionado no plugin
-    $post_type = get_option('post_types')["post_types_checkbox_field_1"];
+    $post_type = get_option('post_types') && get_option('post_types')["post_types_checkbox_field_1"] ? get_option('post_types')["post_types_checkbox_field_1"] : [];
 
     $flag = False;
     foreach ($post_type as $post) {
